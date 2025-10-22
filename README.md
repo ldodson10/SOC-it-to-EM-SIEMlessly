@@ -146,6 +146,54 @@ Configure centralized logging infrastructure using Terraform to integrate S3 arc
 **Status:** Completed (awaiting OpenSearch ingestion test)  
 **Owner:** Latrisha Dodson (Data Quarantine Architect)
 
+
+🧩 Sprint 3 Deliverables — AWS VPC Setup & Verification
+
+Objective:
+Design and validate a secure Virtual Private Cloud (VPC) architecture supporting the SOC-as-a-Service environment for SOC it to ’EM SIEMlessly.
+This phase confirms networking fundamentals — VPC creation, subnet segmentation, route tables, NACLs, and security groups — deployed through AWS CLI and verified via Terraform and SSO CLI sessions.
+
+🧠 Key Validation Tasks
+
+Configured and verified VPC, subnets, route tables, and internet gateway.
+
+Established public/private subnet associations and NAT gateway for egress traffic.
+
+Implemented Network ACLs (NACLs) for traffic control and segmentation.
+
+Created Security Groups for SSH (22), HTTP (80), and HTTPS (443) access.
+
+Validated resource existence and permissions via AWS CLI profile (groundzero-lead).
+
+📂 Evidence Files Location
+
+docs/evidence/VPC_Setup_Group/
+
+🧾 Evidence Screenshots and Descriptions
+Screenshot	Description	Validation Stage
+VPC_Creation_Success.png	VPC created and associated with us-east-1 region via Terraform.	Provisioning
+Subnets_Configured_Success.png	All four subnets (public & private) successfully created and associated with route tables.	Subnet Layer
+RouteTables_Configured_Success.png	Public and private route tables configured for NAT and internet gateway routing.	Routing
+NATGateway_Configured.png	NAT gateway deployed and verified for private subnet egress.	Connectivity
+Private_NACL_Rules.png	Private NACL inbound/outbound rules configured for restricted traffic flows.	Network Security
+Public_NACL_Rules.png	Public NACL configured for open inbound HTTP/HTTPS and SSH.	Network Security
+SecurityGroups_Configured_Success.png	Security Group siem-public-sg allowing TCP ports 22, 80, 443 for public instances.	Access Control
+AWS_Caller_Identity_Verification.png	CLI confirmation of active IAM role siem-arch-ld under AWS Reserved SSO permissions.	Authentication
+AWS_VPC_List_Verification.png	AWS CLI command describe-vpcs output confirming VPC ID and CIDR association.	Validation
+🧩 CLI Validation Outputs
+
+Additional verification artifacts are stored in:
+
+VPC_Region_Scan_Results.txt — Region-wide VPC scan output
+
+AWS_SSO_Login_Success_SIEMplicity.png — Authenticated CLI session screenshot
+
+✅ Status
+
+Completed – All AWS VPC components successfully created and validated.
+Documentation and screenshots ready for peer review and GitHub submission.
+
+
 ## Contributing
 
 This project serves as a foundation for event-driven data processing pipelines. Extend the Lambda handler in `automation/lambda_handler.py` to implement your specific data processing requirements.
