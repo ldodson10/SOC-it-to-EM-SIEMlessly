@@ -271,3 +271,15 @@ SOC-it-to-EM-SIEMlessly/
 │   └── outputs.tf
 ├── README.md
 └── README_evidence.md
+
+---
+
+## 📸 Evidence & Verification  
+
+All Git operations, merges, and branch updates were successfully validated using **Visual Studio Code** and **Git CLI**.  
+
+- **Local Commit Evidence:** [`docs/screenshots/LocalOS_GitPush_Success_SIEMlessly.png`](./docs/screenshots/LocalOS_GitPush_Success_SIEMlessly.png)  
+- **Verification Summary:** Confirms successful synchronization of the `feature/siemplicity-vpc-stable` branch to the remote repository [`ldodson10/SOC-it-to-EM-SIEMlessly`](https://github.com/ldodson10/SOC-it-to-EM-SIEMlessly).  
+- **Purpose:** Ensures transparent version control and reproducibility of all project updates.  
+
+---
