@@ -241,7 +241,7 @@ Verification Evidence:
 📜 Status: Completed (ready for Sprint 4 — EC2 Provisioning & Lambda Integration)
 Owner: Latrisha Dodson (Data Quarantine Architect)
 
----
+```
 📁 Updated Repository Structure for Sprint 3 Evidence
 
 SOC-it-to-EM-SIEMlessly/
@@ -299,7 +299,7 @@ SOC-it-to-EM-SIEMlessly/
 ├── README.md
 ├── README_evidence.md
 └── VPC_Region_Scan_Results.txt
-
+```
 
 ## 📸 Evidence & Verification  
 
