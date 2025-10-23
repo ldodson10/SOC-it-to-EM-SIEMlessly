@@ -1,7 +1,7 @@
-# SIEMplicity
-Cloud Incident Response Automator (IaC + SIEM + Automation)
+# SOC it to ’EM SIEMlessly  
+*Automating cloud incident response with serverless precision — SOC it to ’EM SIEMlessly.*
 
-Event-driven AWS S3 + Lambda ingestion pipeline built with Terraform and Python. Automates file ingestion, logging, and CloudWatch monitoring via EventBridge triggers.
+SOC it to ’EM SIEMlessly is a cloud-native incident response automation framework built on AWS. It streamlines detection, containment, and evidence collection for Security Operations Center (SOC) environments using Terraform, Lambda, and EventBridge. Designed for scalability and automation, the system bridges DevSecOps principles with real-time monitoring—delivering a unified, serverless approach to SIEM orchestration and cloud defense.
 
 ## Overview
 
