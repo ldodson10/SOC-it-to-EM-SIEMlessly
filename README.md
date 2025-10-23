@@ -241,38 +241,9 @@ Verification Evidence:
 📜 Status: Completed (ready for Sprint 4 — EC2 Provisioning & Lambda Integration)
 Owner: Latrisha Dodson (Data Quarantine Architect)
 
-
-🗂️ Updated Repository Structure for Sprint 3 Evidence
-SOC-it-to-EM-SIEMlessly/
-├── automation/
-│   └── lambda_handler.py
-├── docs/
-│   ├── SIEM_VPC_Details.json              # exported CLI verification file
-│   ├── Sprint3_VPC_Setup_Steps.md         # optional detailed setup notes
-│   └── eventbridge_rule_diagram.md
-├── assets/
-│   ├── Sprint3_VPC_Evidence/
-│   │   ├── AWS_SSO_Login_Success_SIEMplicity.png
-│   │   ├── AWS_Caller_Identity_Verification.png
-│   │   ├── AWS_VPC_List_Verification.png
-│   │   ├── AWS_VPC_Dashboard_View.png              # from console (final VPC view)
-│   │   ├── AWS_Subnet_Configuration.png            # all public/private subnets shown
-│   │   ├── AWS_RouteTables_Validation.png          # public → IGW; private → NAT
-│   │   └── AWS_SecurityGroups_Validation.png       # confirms ports 22 and 5601
-│   └── Sprint2_Deliverables/
-│       ├── LocalOS_LoggingModule_Validation_Success.png
-│       ├── Terraform_Firehose_AccessDenied.png
-│       └── LocalOS_VPCDeployment_Success.png
-├── iac/
-│   ├── modules/
-│   │   └── logging/
-│   ├── main.tf
-│   ├── variables.tf
-│   └── outputs.tf
-├── README.md
-└── README_evidence.md
-
 ---
+📁 Updated Repository Structure for Sprint 3 Evidence
+
 SOC-it-to-EM-SIEMlessly/
 ├── assets/
 │ └── Sprint2_Deliverables/
