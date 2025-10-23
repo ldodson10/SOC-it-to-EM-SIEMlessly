@@ -273,6 +273,62 @@ SOC-it-to-EM-SIEMlessly/
 └── README_evidence.md
 
 ---
+SOC-it-to-EM-SIEMlessly/
+├── assets/
+│ └── Sprint2_Deliverables/
+│ ├── LocalOS_LoggingModule_README_Generated_Config.png
+│ ├── LocalOS_LoggingModule_Validation_Success.png
+│ ├── LocalOS_VPCDeployment_Success.png
+│ ├── Terraform_Firehose_ConfigGenerated.png
+│ ├── Terraform_Firehose_S3_Config_Block.png
+│ ├── Terraform_Init_Success.png
+│ ├── Terraform_Validate_Success.png
+│ └── Terraform_Variables_Update_FirehoseRole.png
+│
+├── automation/
+│ ├── .gitkeep
+│ └── lambda_handler.py
+│
+├── config/
+│ └── .gitkeep
+│
+├── diagrams/
+│ └── .gitkeep
+│
+├── docs/
+│ ├── SIEM_VPC_Details.json
+│ ├── Sprint3_VPC_Setup_Steps.md
+│ └── eventbridge_rule_diagram.md
+│
+├── iac/
+│ ├── main.tf
+│ ├── outputs.tf
+│ ├── variables.tf
+│ └── modules/
+│ └── logging/
+│
+├── ingestion/
+│ └── aws-s3-lambda-ingestion/
+│ ├── main.tf
+│ ├── variables.tf
+│ └── outputs.tf
+│
+├── siem/
+│ ├── main.tf
+│ ├── variables.tf
+│ └── outputs.tf
+│
+├── vpc/
+│ ├── main.tf
+│ ├── outputs.tf
+│ └── variables.tf
+│
+├── .cursorprompt.json
+├── .gitignore
+├── README.md
+├── README_evidence.md
+└── VPC_Region_Scan_Results.txt
+
 
 ## 📸 Evidence & Verification  
 
