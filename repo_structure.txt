@@ -1,0 +1,249 @@
+Folder PATH listing for volume Windows
+Volume serial number is 31E8-0570
+C:.
+¦   .cursorprompt.json
+¦   .gitignore
+¦   README.md
+¦   repo_structure.txt
+¦   VPC_Region_Scan_Results.txt
+¦   
++---.cursor
+¦       test.txt
+¦       
++---assets
+¦   +---Sprint2_Deliverables
+¦           LocalOS_LoggingModule_README_Generated_Config.png
+¦           LocalOS_LoggingModule_README_Generated_Overview.png
+¦           LocalOS_LoggingModule_Validation_Success.png
+¦           LocalOS_VPCDeployment_Success.png
+¦           Terraform_Firehose_AccessDenied.png
+¦           Terraform_Firehose_Config_Corrected.png
+¦           Terraform_Firehose_S3_Config_Block.png
+¦           Terraform_Init_Success.png
+¦           Terraform_Validate_Success.png
+¦           Terraform_Variables_Update_FirehoseRole.png
+¦           
++---automation
+¦       .gitkeep
+¦       lambda_handler.py
+¦       
++---config
++---diagrams
+¦       .gitkeep
+¦       
++---docs
+¦   ¦   .gitkeep
+¦   ¦   eventbridge_rule_diagram.md
+¦   ¦   
+¦   +---evidence
+¦   ¦   ¦   AWS_SSO_Login_Success_SIEMlessly.png
+¦   ¦   ¦   FolderStructure_SIEMlessly_Organized.png
+¦   ¦   ¦   Internet_Gateway_Attach.png
+¦   ¦   ¦   Private_NACL_Rules.png
+¦   ¦   ¦   Private_SG_Rules.png
+¦   ¦   ¦   Public_NACL_Rules.png
+¦   ¦   ¦   Public_RouteTable_Association.png
+¦   ¦   ¦   README_evidence.md
+¦   ¦   ¦   SIEM_VPC_Details.json
+¦   ¦   ¦   Terraform_Init_Success.png
+¦   ¦   ¦   Terraform_Plan_Output.png
+¦   ¦   ¦   Terraform_VPC_Outputs.png
+¦   ¦   ¦   VPC_Creation_Success.png
+¦   ¦   ¦   VPC_Definition__Block.png
+¦   ¦   ¦   VSCode_Workspace_SIEMplicity.png
+¦   ¦   ¦   
+¦   ¦   +---VPC_Setup_Group
+¦   ¦           ElasticIP_Allocated.png
+¦   ¦           IGW_Attach_to_VPC.png
+¦   ¦           Key Pair siem-nat-test-key.txt
+¦   ¦           NAT_Gateway_Create.png
+¦   ¦           PrivateRT_BothSubnetsAssociated.png
+¦   ¦           PublicRT_Associations.png
+¦   ¦           SecurityGroups_Configured_Success.png
+¦   ¦           SG_Inbound_5601_Creation.png
+¦   ¦           Subnets_Configured_Success.png
+¦   ¦           Subnet_Private-2_Creation.png
+¦   ¦           Subnet_Public-2_Creation.png
+¦   ¦           VPC_Complete_View.png
+¦   ¦           VPC_Created_Virginia.png
+¦   ¦           VPC_Private_Subnet_Form.png
+¦   ¦           VPC_Public_Subnet_Form.png
+¦   ¦           VPC_Public_Subnet_Recreated.png
+¦   ¦           VPC_Subnets_Created_Success.png
+¦   ¦           
+¦   +---screenshots
+¦   ¦       LocalOS_GitPush_Success_SIEMlessly.png
+¦   ¦       
+¦   +---sprint2
+¦   ¦   ¦   Setup_Validation.md
+¦   ¦   ¦   Sprint2_Completion_Checklist.md
+¦   ¦   ¦   
+¦   ¦   +---img
+¦   ¦           AWS_SSO_Login_Success_SIEMplicity.png
+¦   ¦           Cursor_Terminal_ProjectRoot_SIEMplicity.png
+¦   ¦           Git_Branch_List_Before_Cleanup.png
+¦   ¦           Git_Remote_Branch_Deleted.png
+¦   ¦           GuardDuty_Payload_File_In_Cursor.png
+¦   ¦           Infra_TestPayloads_Directory_Creation.png
+¦   ¦           LocalOS_LoggingModule_README_Generated_Config.png
+¦   ¦           LocalOS_LoggingModule_README_Generated_Overview.png
+¦   ¦           LocalOS_LoggingModule_Validation_Success.png
+¦   ¦           LocalOS_Terraform_VPC_Structure.png
+¦   ¦           LocalOS_VPCDeployment_Success.png
+¦   ¦           Local_AWS_Identity.png
+¦   ¦           Terraform_Firehose_AccessDenied.png
+¦   ¦           Terraform_Firehose_Config_Corrected.png
+¦   ¦           Terraform_Firehose_S3_Config_Block.png
+¦   ¦           Terraform_Init_Success.png
+¦   ¦           Terraform_Validate_Success.png
+¦   ¦           Terraform_Variables_Update_FirehoseRole.png
+¦   ¦           
+¦   +---sprint3
+¦       ¦   Terraform_Init_Success.png
+¦       ¦   
+¦       +---Sprint3_Deliverables
++---iac
+¦   ¦   .gitkeep
+¦   ¦   .terraform.lock.hcl
+¦   ¦   iam.tf
+¦   ¦   logging.tf
+¦   ¦   main.tf
+¦   ¦   plan.tfplan
+¦   ¦   README.md
+¦   ¦   terraform.tfstate
+¦   ¦   terraform.tfstate.backup
+¦   ¦   terraform.tfvars
+¦   ¦   variables.tf
+¦   ¦   
+¦   +---.terraform
+¦   ¦   +---modules
+¦   ¦   ¦       modules.json
+¦   ¦   ¦       
+¦   ¦   +---providers
+¦   ¦       +---registry.terraform.io
+¦   ¦           +---hashicorp
+¦   ¦               +---aws
+¦   ¦                   +---4.67.0
+¦   ¦                   ¦   +---windows_amd64
+¦   ¦                   ¦           terraform-provider-aws_v4.67.0_x5.exe
+¦   ¦                   ¦           
+¦   ¦                   +---5.100.0
+¦   ¦                   ¦   +---windows_amd64
+¦   ¦                   ¦           LICENSE.txt
+¦   ¦                   ¦           terraform-provider-aws_v5.100.0_x5.exe
+¦   ¦                   ¦           
+¦   ¦                   +---6.16.0
+¦   ¦                       +---windows_amd64
+¦   ¦                               LICENSE.txt
+¦   ¦                               terraform-provider-aws_v6.16.0_x5.exe
+¦   ¦                               
+¦   +---assets
+¦   ¦   +---Sprint2_Deliverables
+¦   +---modules
+¦       +---logging
+¦               iam.tf
+¦               main.tf
+¦               outputs.tf
+¦               README.md
+¦               s3_lifecycle.tf
+¦               variables.tf
+¦               
++---infra
+¦   ¦   .terraform.lock.hcl
+¦   ¦   s3_lambda_ingest.tf
+¦   ¦   
+¦   +---.terraform
+¦   ¦   +---providers
+¦   ¦       +---registry.terraform.io
+¦   ¦           +---hashicorp
+¦   ¦               +---aws
+¦   ¦               ¦   +---5.100.0
+¦   ¦               ¦       +---windows_amd64
+¦   ¦               ¦               LICENSE.txt
+¦   ¦               ¦               terraform-provider-aws_v5.100.0_x5.exe
+¦   ¦               ¦               
+¦   ¦               +---random
+¦   ¦                   +---3.7.2
+¦   ¦                       +---windows_amd64
+¦   ¦                               LICENSE.txt
+¦   ¦                               terraform-provider-random_v3.7.2_x5.exe
+¦   ¦                               
+¦   +---infra
+¦   ¦   +---policies
+¦   ¦           terraform_s3_lambda_policy.json
+¦   ¦           
+¦   +---test_payloads
+¦           guardduty-high-severity.json
+¦           
++---ingestion
+¦   +---aws-s3-lambda-ingestion
+¦       ¦   allfiles.txt
+¦       ¦   README.md
+¦       ¦   
+¦       +---automation
+¦       ¦       lambda_handler.py
+¦       ¦       
+¦       +---docs
+¦       ¦       eventbridge_rule_diagram.md
+¦       ¦       shutdown_confirmation_log.md
+¦       ¦       
+¦       +---infra
+¦           ¦   .terraform.lock.hcl
+¦           ¦   guardduty.tf
+¦           ¦   lambda_function_payload.zip
+¦           ¦   s3_lambda_ingest.tf
+¦           ¦   terraform.tfstate.bak
+¦           ¦   terraform_clean_restart.ps1
+¦           ¦   tfplan
+¦           ¦   vpc_main.tf
+¦           ¦   
+¦           +---.terraform
+¦               +---providers
+¦                   +---registry.terraform.io
+¦                       +---hashicorp
+¦                           +---aws
+¦                           ¦   +---5.100.0
+¦                           ¦       +---windows_amd64
+¦                           ¦               LICENSE.txt
+¦                           ¦               terraform-provider-aws_v5.100.0_x5.exe
+¦                           ¦               
+¦                           +---random
+¦                               +---3.7.2
+¦                                   +---windows_amd64
+¦                                           LICENSE.txt
+¦                                           terraform-provider-random_v3.7.2_x5.exe
+¦                                           
++---siem
+¦       .gitkeep
+¦       
++---vpc
+    ¦   .terraform.lock.hcl
+    ¦   main.tf
+    ¦   outputs.tf
+    ¦   provider.tf
+    ¦   README.md
+    ¦   state_snapshot.txt
+    ¦   terraform.tfstate
+    ¦   terraform.tfstate.backup
+    ¦   terraform.tfvars
+    ¦   terraform_plan_review.txt
+    ¦   VALIDATION_SUMMARY.md
+    ¦   variables.tf
+    ¦   vpc.plan
+    ¦   
+    +---.terraform
+        +---providers
+            +---registry.terraform.io
+                +---hashicorp
+                    +---aws
+                    ¦   +---5.100.0
+                    ¦       +---windows_amd64
+                    ¦               LICENSE.txt
+                    ¦               terraform-provider-aws_v5.100.0_x5.exe
+                    ¦               
+                    +---random
+                        +---3.7.2
+                            +---windows_amd64
+                                    LICENSE.txt
+                                    terraform-provider-random_v3.7.2_x5.exe
+                                    
