@@ -1,357 +1,281 @@
-SOC it to ’EM SIEMlessly
-A Multi-Account Cloud Governance, Logging, and Threat Detection Architecture on AWS
-📌 Project Summary
+# SOC it to ’EM SIEMlessly
 
-SOC it to ’EM SIEMlessly is a cloud-native multi-account security governance architecture designed to centralize audit logging, threat detection, and compliance workflows across an enterprise AWS environment.
+*A Multi-Account Cloud Governance, Logging, and Threat Detection Architecture on AWS*
+
+---
+
+## 📌 Project Summary
+
+SOC it to ’EM SIEMlessly is a cloud-native, multi-account SIEM and governance architecture that centralizes audit logging, threat detection, and compliance enforcement across AWS environments.
 
 The system integrates:
 
-AWS Organizations (intended multi-account governance model)
-
-Security Hub, GuardDuty, Inspector (delegated admin pattern)
-
-CloudTrail (multi-region, multi-account logging)
-
-VPC Flow Logs (centralized)
-
-S3 Log Archive (versioning + encryption)
-
-Glue Data Catalog + Athena (query layer)
-
-EventBridge → Lambda → OpenSearch (indexing + dashboards)
-
-Terraform IaC modules (modular, reusable)
-
-Restricted AWS SSO role boundaries for separation of duties
+- AWS Organizations (intended multi-account design)
+- Security Hub, GuardDuty, Inspector (delegated admin model)
+- CloudTrail (multi-region)
+- VPC Flow Logs
+- S3 Log Archive with versioning and encryption
+- Glue Data Catalog + Athena
+- EventBridge → Lambda → OpenSearch pipeline
+- Terraform IaC modules (logging, SIEM, ingestion, VPC)
+- Restricted-role AWS SSO access for separation of duties
 
 This README distinguishes:
 
-The intended enterprise multi-account SIEM/governance architecture
+1. Intended enterprise architecture  
+2. Components manually validated during Sprint 4 under the SIEM-Data-Architect read-only role  
 
-The manually provisioned Sprint 4 components, completed under the restricted SIEM-Data-Architect role.
+---
 
-1. Architecture Overview
+## 1. Architecture Overview
 
-Below is the final validated AWS architecture for the SIEM/governance pipeline:
-![Architecture Diagram](./sprint4/Architecture_Diagram.png)
+The validated AWS SIEM/governance architecture unifies:
 
-This system unifies:
+- CloudTrail log delivery  
+- VPC Flow Logs → S3  
+- Glue + Athena schema and query layer  
+- Security Hub, GuardDuty, Inspector  
+- EventBridge → Lambda ETL path  
+- OpenSearch dashboards  
+- Delegated administrator governance model  
+- Multi-account structure (Management → Log Archive → Security Tooling → Member Accounts)
 
-CloudTrail log delivery
+---
 
-VPC Flow Logs
+## 2. Intended Multi-Account Governance Architecture
 
-S3 central logging
+Although the restricted SSO role prevented provisioning, the capstone includes a complete enterprise design.
 
-Glue schema + Athena query layer
+### 2.1 Organizational Structure
 
-GuardDuty, Inspector, Security Hub findings
+- Management Account  
+- Log Archive Account  
+- Security Tooling Account  
+- Multiple Member Accounts  
 
-EventBridge → Lambda ETL
+### 2.2 Delegated Administrator Assignments
 
-OpenSearch dashboards
+- Security Hub  
+- GuardDuty  
+- Inspector  
 
-CloudFormation provisioning
+### 2.3 Cross-Account Log Aggregation
 
-Multi-account delegated administration
+| Source           | Log Type          | Destination   | Mechanism                            |
+|------------------|-------------------|---------------|--------------------------------------|
+| Member Accounts  | CloudTrail        | Log Archive   | S3 log bucket                        |
+| Member Accounts  | VPC Flow Logs     | Log Archive   | VPC Flow Logs                        |
+| Member Accounts  | Security Findings | Security Tooling | EventBridge + Delegated Admin   |
 
-2. Intended Multi-Account Governance Architecture
+### 2.4 Query & Analytics Layer
 
-Even though role restrictions prevented provisioning, the project includes a full enterprise governance design.
+- Glue defines schema  
+- Athena queries S3  
+- Lambda → OpenSearch indexes findings  
 
-Organizational Structure
+---
 
-Management Account
+## 3. Manually Validated Components (Sprint 4)
 
-Log Archive Account
+Executed under the **SIEM-Data-Architect (Read-Only)** SSO role.
 
-Security Tooling Account
+### 3.1 CloudTrail (Multi-Region)
 
-Workload Member Accounts
+- Validated event history  
+- Confirmed account-level governance  
+- Verified permission boundaries preventing trail creation  
 
-Delegated Administrator Assignments
+**Evidence**  
+`./sprint4/evidence/s4_cloudtrail_view_only.png`
 
-Security Hub Delegated Admin
+### 3.2 S3 Central Log Archive
 
-GuardDuty Delegated Admin
+Bucket: `gvrdc-central-logs-ld-us-east-1`
 
-Inspector Delegated Admin
+- Versioning enabled  
+- SSE encryption verified  
+- CloudTrail and Flow Logs delivery confirmed  
 
-Cross-Account Log Aggregation
-Source Account	Log Type	Destination Account	Mechanism
-Member Accounts	CloudTrail	Log Archive	S3 Log Bucket
-Member Accounts	VPC Flow Logs	Log Archive	VPC Flow Log Delivery
-Member Accounts	Security Findings	Security Tooling	Delegated Admin + EventBridge
-Query & Analytics Pipeline
+**Evidence**  
+`./sprint4/evidence/s4_s3_log_archive_bucket.png`
 
-Glue catalog defines schemas
+### 3.3 VPC Flow Logs → S3 Delivery
 
-Athena queries the S3 log archive
+- Located FlowLogs folder and log files  
+- Verified log record structure  
 
-EventBridge + Lambda forwards findings to OpenSearch
+**Evidence**  
+`./sprint4/evidence/s4_flowlogs_s3_delivery.png`
 
-3. Manually Provisioned Components (Sprint 4)
+### 3.4 Athena (Read-Only Validation)
 
-Provisioned using the SIEM-Data-Architect SSO role (read-only restrictions in Glue/Athena).
+- Verified workgroups and query history  
+- Captured permission boundaries for DDL operations  
 
-✔ CloudTrail (Multi-Region Trail Enabled)
+**Evidence**  
+`./sprint4/evidence/s4_athena_read_only.png`
 
-✔ S3 Central Log Archive (Versioning + Encryption Enabled)
+### 3.5 Security Hub / GuardDuty / Inspector – View-Only
 
-✔ VPC Flow Logs → S3 Delivery
+- Confirmed findings display  
+- Confirmed modification limitations  
 
-✔ Athena — Restricted Read-Only Access
+**Evidence**  
+`./sprint4/evidence/s4_security_services_view_only.png`
 
-✔ Flow Log File Parsing Validation
+### 3.6 Glue – Access Denied (Expected)
 
-✔ Final System Architecture Diagram (Confirmed)
+- Validated that Glue database creation is blocked by role policy  
 
-📁 Full Sprint 4 Evidence Folder:
+**Evidence**  
+`./sprint4/evidence/s4_glue_access_denied.png`
 
-/sprint4/evidence/
+### 3.7 Final System Architecture Diagram
 
-4. Sprint Documentation (Sprints 1–4)
-Sprint 1 — Foundations
-Completed
+**Evidence**  
+`./sprint4/Architecture_Diagram.png`
 
-Repository initialization
+---
 
-Project folder structure creation
+## 4. Sprint Documentation (Sprints 1–4)
 
-Core README.md draft
+### 4.1 Sprint 1 — Foundations
 
-Initial documentation layout
+**Completed**
 
-AWS SSO login (if applicable)
+- Repository setup  
+- Initial SIEM architecture scoping  
+- AWS SSO login  
+- IAM role boundary identification  
 
-Local Git environment configured
+**Evidence**
 
-Successful Git commit and push verification
+| Description                          | File                                                              |
+|--------------------------------------|-------------------------------------------------------------------|
+| Permission denied – Security Services | `./sprint1/evidence/s1_permission_denied_security_services.png`  |
+| CloudTrail create denied             | `./sprint1/evidence/s1_cloudtrail_create_denied.png`             |
+| General permission boundary          | `./sprint1/evidence/s1_permission_boundary_general.png`          |
+| AWS Console access                   | `./sprint1/evidence/s1_aws_console_access.png`                   |
+| Architecture planning                | `./sprint1/evidence/s1_architecture_planning.png`                |
 
-📸 Sprint 1 Evidence
-1. GitHub Repository Structure Rendered Successfully
+---
 
-This confirms the repository root, folders, and README render correctly in GitHub.
+### 4.2 Sprint 2 — Logging Module (Terraform)
 
-./sprint1/evidence/GitHub_RepoStructure_Rendered_Success.png
+**Completed**
 
+- S3 archival bucket architecture  
+- Firehose ingestion planning  
+- Terraform initialization and validation  
+- Logging module directory verification  
 
-2. Successful Local Git Push
+**Evidence**
 
-Validates the local development environment, Git CLI, SSO token (if applicable), and branch sync pipeline.
+| Description                       | File                                                       |
+|-----------------------------------|------------------------------------------------------------|
+| AWS STS identity verification     | `./sprint2/evidence/s2_aws_sts_identity.png`              |
+| Terraform init                    | `./sprint2/evidence/s2_terraform_init.png`                |
+| Terraform plan / output           | `./sprint2/evidence/s2_terraform_plan_output.png`         |
+| Logging S3 bucket                 | `./sprint2/evidence/s2_s3_logging_bucket.png`             |
+| Logging module directory          | `./sprint2/evidence/s2_logging_module_directory.png`      |
+| Logging pipeline design           | `./sprint2/evidence/s2_logging_pipeline_design.png`       |
 
-./sprint1/evidence/LocalOS_GitPush_Success_SIEMlessly.png
+---
 
+### 4.3 Sprint 3 — VPC Architecture & AWS CLI Validation
 
-3. README Structure Verified in VS Code
+**Completed**
 
-This screenshot confirms that the README.md scaffolding was created and rendered properly during Sprint 1.
+- VPC creation  
+- Subnets (public and private)  
+- Route tables  
+- NAT Gateway  
+- NACLs  
+- Security groups  
 
-./sprint1/evidence/README_Structure_CodeBlock.png
+**Evidence**
 
+| Description          | File                                                  |
+|----------------------|-------------------------------------------------------|
+| VPC dashboard        | `./sprint3/evidence/s3_vpc_dashboard.png`            |
+| Subnets view         | `./sprint3/evidence/s3_subnets_view.png`             |
+| Route tables         | `./sprint3/evidence/s3_route_tables.png`             |
+| IGW and NAT Gateway  | `./sprint3/evidence/s3_internet_nat_gateway.png`     |
+| NACL configuration   | `./sprint3/evidence/s3_nacls.png`                    |
+| Security groups      | `./sprint3/evidence/s3_security_groups.png`          |
 
-4. README Verification Section Completed
+---
 
-Demonstrates the successful completion of the initial documentation block.
+### 4.4 Sprint 4 — Governance Components (Manual Provisioning)
 
-./sprint1/evidence/README_Verification_Section_Complete.png
+*(Performed under restricted SSO role)*
 
-📁 Sprint 1 Evidence Folder
+**Completed**
 
-All Sprint 1 screenshots are stored in:
+- CloudTrail validation  
+- S3 Log Archive verification  
+- Flow Log parsing  
+- Athena read-only validation  
+- Security services read-only validation  
+- Glue access-denied confirmation  
+- Final architecture diagram generation  
 
-/sprint1/evidence/
+**Evidence**
 
-Sprint 2 — Logging Module (Terraform)
-Completed
+| Description                | File                                                       |
+|----------------------------|------------------------------------------------------------|
+| CloudTrail view-only       | `./sprint4/evidence/s4_cloudtrail_view_only.png`          |
+| Central log archive bucket | `./sprint4/evidence/s4_s3_log_archive_bucket.png`         |
+| Flow Logs → S3             | `./sprint4/evidence/s4_flowlogs_s3_delivery.png`          |
+| Athena read-only           | `./sprint4/evidence/s4_athena_read_only.png`              |
+| Security services view-only| `./sprint4/evidence/s4_security_services_view_only.png`   |
+| Glue access denied         | `./sprint4/evidence/s4_glue_access_denied.png`            |
+| Architecture diagram       | `./sprint4/Architecture_Diagram.png`                      |
 
-S3 archival bucket created
+---
 
-Terraform modules initialized and validated
+## 5. Repository Structure
 
-Logging module generated and reviewed
-
-Firehose → OpenSearch architecture drafted (IAM constraints documented)
-
-VPC deployment revalidated as a prerequisite for log delivery
-
-📸 Sprint 2 Evidence (Condensed to 3 Files)
-1. Logging Module README — Generated Configuration
-
-Represents successful Terraform module generation and setup.
-
-./sprint2/evidence/LocalOS_LoggingModule_README_Generated_Config.png
-
-
-2. Logging Module Validation — Success
-
-Demonstrates correct Terraform wiring and module validation.
-
-./sprint2/evidence/LocalOS_LoggingModule_Validation_Success.png
-
-
-3. Terraform Init + Validate — Successful Deployment
-
-Represents Terraform initialization and validation for the logging pipeline.
-
-./sprint2/evidence/Terraform_Validate_Success.png
-
-
-📁 Sprint 2 Evidence Folder
-
-All Sprint 2 screenshots (full set) are archived in:
-
-/sprint2/evidence/
-
-Sprint 3 — VPC Architecture & AWS CLI Validation
-Completed
-
-VPC (10.0.0.0/16) created and verified
-
-Public and private subnets deployed
-
-Region, routing, and NACLs confirmed
-
-AWS SSO session and IAM role validated
-
-Terraform state compared and confirmed without duplicates
-
-📸 Sprint 3 Evidence (Condensed to 3 Files)
-1. VPC Creation & Region Verification
-./sprint3/evidence/VPC_Region_Confirmation.png
-
-
-2. Subnets Created Successfully
-./sprint3/evidence/Subnets_us-east-1a_1b.png
-
-
-3. AWS CLI SSO Session Verified
-./sprint3/evidence/CLI_SSO_Session_Confirmed.png
-
-
-📁 Sprint 3 Evidence Folder
-
-All Sprint 3 screenshots (full set) are archived in:
-
-/sprint3/evidence/
-
-
-Sprint 4 — Governance Components (Manual Provisioning)
-
-This sprint required manually configuring governance + logging components using the restricted SIEM-Data-Architect SSO role.
-
-Evidence (All Embedded Above)
-
-CloudTrail (multi-region)
-
-VPC Flow Logs delivery
-
-S3 Log Archive
-
-Athena read-only validation
-
-Flow Log file parsing
-
-Final architecture diagram
-
-Sprint 4 — Governance Components (Manual Provisioning)
-Completed
-
-Enabled CloudTrail Multi-Region Trail
-
-Configured S3 Central Log Archive with versioning + SSE
-
-Enabled VPC Flow Logs → S3 delivery
-
-Verified Athena read-only role constraints
-
-Confirmed Flow Log file integrity
-
-Produced Final Architecture Diagram
-
-All configurations were performed under the restricted SIEM-Data-Architect AWS SSO role.
-
-📸 Sprint 4 Evidence (Condensed to 3 Files)
-1. CloudTrail Multi-Region Trail Enabled
-./sprint4/evidence/CloudTrail_CreateTrail.png
-
-
-2. S3 Central Log Bucket — Versioning & Encryption Enabled
-./sprint4/evidence/S3_LogBucket_Encryption_Enabled.png
-
-
-3. VPC Flow Logs Delivered to S3
-./sprint4/evidence/VPCFlowLogs_Active.png
-
-
-📁 Sprint 4 Evidence Folder
-
-The complete Sprint 4 screenshot collection is stored in:
-
-/sprint4/evidence/
-
-
-5. Repository Structure
+```text
 SOC-it-to-EM-SIEMlessly/
-├── assets/
-│   └── Sprint2_Deliverables/
-├── automation/
-├── config/
-├── diagrams/
-├── docs/
-│   ├── SIEM_VPC_Details.json
-│   ├── evidence/
-│   │   └── VPC_Setup_Group/
-├── ingestion/
+├── sprint1/
+│   └── evidence/
+├── sprint2/
+│   └── evidence/
+├── sprint3/
+│   └── evidence/
 ├── sprint4/
 │   ├── Architecture_Diagram.png
-│   ├── evidence/
-│   ├── Sprint4_Evidence.md
-│   ├── Sprint4_Notes.md
+│   └── evidence/
 ├── iac/
+├── ingestion/
 ├── vpc/
+├── automation/
+├── docs/
 ├── README.md
 └── README_evidence.md
 
 6. Restricted SSO Role — Capabilities vs. Limitations
-Capabilities
 
-View CloudTrail logs
+6.1 Capabilities
+*View CloudTrail logs
+*View VPC Flow Logs
+*Query Athena (read-only)
+*View Security Hub, GuardDuty, Inspector
+*Access S3 Log Archive
 
-View VPC Flow Logs
-
-Query Athena (read-only)
-
-View Security Hub, GuardDuty, Inspector
-
-Access S3 log archive
-
-Limitations
-
-Cannot create CloudTrail
-
-Cannot create Glue tables
-
-Cannot create DynamoDB
-
-Cannot run Athena DDL
-
-Cannot deploy CloudFormation
-
-Cannot modify Security Hub / GuardDuty / Inspector
-
-This distinction is required for Sprint 4.
+6.2 Limitations
+*Cannot create CloudTrail
+*Cannot create Glue databases or tables
+*Cannot create DynamoDB
+*Cannot modify Security services
+*Cannot run Athena DDL
+*Cannot deploy CloudFormation
 
 7. Future Enhancements
-
-Automated delegated admin provisioning
-
-Glue ETL normalization for VPC Flow Logs
-
-Security Hub → Lambda → OpenSearch export
-
-Event-driven remediation workflows
-
-Multi-account ingestion pipelines
-
-Managed “SIEM-as-a-Service” model for SMB clientsS
+*Automated delegated admin provisioning
+*Glue ETL normalization workflows
+*Security Hub → Lambda → OpenSearch ingestion
+*Automated remediation using EventBridge
+*Multi-account SIEM ingestion pipeline
+*Managed “SIEM-as-a-Service” model for SMBs
