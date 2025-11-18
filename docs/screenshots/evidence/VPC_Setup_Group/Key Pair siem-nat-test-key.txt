@@ -1,4 +1,0 @@
-Key Pair: siem-nat-test-key
-Created: October 21, 2025
-Location: C:\Users\luna\.ssh\siem-nat-test-key.pem
-Purpose: Private EC2 NAT test

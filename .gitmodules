@@ -1,3 +1,0 @@
-[submodule "ingestion/aws-s3-lambda-ingestion"]
-	path = ingestion/aws-s3-lambda-ingestion
-	url = https://github.com/nyahhepburn/gvrdc-aws-infra.git
