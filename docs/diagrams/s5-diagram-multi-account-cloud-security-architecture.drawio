@@ -1,0 +1,45 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Page-1" id="lumizwPmJErNYFkBsxqN">
+    <mxGraphModel dx="779" dy="709" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dn1cmZHhpdPrBOaf5gya-1" value="AWS Organizations" style="whiteSpace=wrap;strokeWidth=2;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" vertex="1" parent="1">
+          <mxGeometry x="976" y="20" width="192" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="dn1cmZHhpdPrBOaf5gya-2" value="Management Account" style="whiteSpace=wrap;strokeWidth=2;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="713" y="20" width="212" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="dn1cmZHhpdPrBOaf5gya-3" value="Security Account" style="whiteSpace=wrap;strokeWidth=2;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="484" y="20" width="180" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="dn1cmZHhpdPrBOaf5gya-4" value="Logging Account" style="whiteSpace=wrap;strokeWidth=2;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="258" y="20" width="176" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="dn1cmZHhpdPrBOaf5gya-5" value="Workload Account" style="whiteSpace=wrap;strokeWidth=2;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="188" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="dn1cmZHhpdPrBOaf5gya-6" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="dn1cmZHhpdPrBOaf5gya-5" target="dn1cmZHhpdPrBOaf5gya-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dn1cmZHhpdPrBOaf5gya-7" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="dn1cmZHhpdPrBOaf5gya-4" target="dn1cmZHhpdPrBOaf5gya-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dn1cmZHhpdPrBOaf5gya-8" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="dn1cmZHhpdPrBOaf5gya-3" target="dn1cmZHhpdPrBOaf5gya-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dn1cmZHhpdPrBOaf5gya-9" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="dn1cmZHhpdPrBOaf5gya-2" target="dn1cmZHhpdPrBOaf5gya-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

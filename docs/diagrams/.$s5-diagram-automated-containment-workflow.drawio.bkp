@@ -1,0 +1,57 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Page-1" id="BYmsRJVzLCSK3i98D8eA">
+    <mxGraphModel dx="779" dy="709" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Je_1hT5izH1XARM6Vvm7-1" value="GuardDuty" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="124" width="136" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="Je_1hT5izH1XARM6Vvm7-2" value="EventBridge Response Triggers" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="206" y="112" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="Je_1hT5izH1XARM6Vvm7-3" value="Lambda Automated Containment" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="516" y="112" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="Je_1hT5izH1XARM6Vvm7-4" value="IAM Permissions" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="847" y="20" width="172" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="Je_1hT5izH1XARM6Vvm7-5" value="S3 Quarantine Bucket" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="826" y="124" width="214" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="Je_1hT5izH1XARM6Vvm7-6" value="CloudWatch Logs" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="843" y="228" width="181" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="Je_1hT5izH1XARM6Vvm7-7" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="Je_1hT5izH1XARM6Vvm7-1" target="Je_1hT5izH1XARM6Vvm7-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Je_1hT5izH1XARM6Vvm7-8" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="Je_1hT5izH1XARM6Vvm7-2" target="Je_1hT5izH1XARM6Vvm7-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Je_1hT5izH1XARM6Vvm7-9" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.72;exitY=0;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="Je_1hT5izH1XARM6Vvm7-3" target="Je_1hT5izH1XARM6Vvm7-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="801" y="47" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Je_1hT5izH1XARM6Vvm7-10" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="Je_1hT5izH1XARM6Vvm7-3" target="Je_1hT5izH1XARM6Vvm7-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Je_1hT5izH1XARM6Vvm7-11" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.72;exitY=1;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="Je_1hT5izH1XARM6Vvm7-3" target="Je_1hT5izH1XARM6Vvm7-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="801" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

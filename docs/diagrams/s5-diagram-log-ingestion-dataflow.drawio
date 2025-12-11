@@ -1,0 +1,51 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Page-1" id="T0O3Yx2ScsUCLMbMfV4W">
+    <mxGraphModel dx="1029" dy="709" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DaTu6bE_Cf47T9nh1NzB-1" value="CloudTrail Logs" style="whiteSpace=wrap;strokeWidth=2;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="36" y="20" width="168" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="DaTu6bE_Cf47T9nh1NzB-2" value="S3 Quarantine Log Bucket" style="whiteSpace=wrap;strokeWidth=2;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="269" y="20" width="244" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="DaTu6bE_Cf47T9nh1NzB-3" value="Athena Queries" style="whiteSpace=wrap;strokeWidth=2;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" vertex="1" parent="1">
+          <mxGeometry x="563" y="20" width="169" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="DaTu6bE_Cf47T9nh1NzB-4" value="CloudWatch Logs" style="whiteSpace=wrap;strokeWidth=2;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="301" y="124" width="181" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="DaTu6bE_Cf47T9nh1NzB-5" value="VPC Flow Logs" style="whiteSpace=wrap;strokeWidth=2;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" vertex="1" parent="1">
+          <mxGeometry x="38" y="124" width="162" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="DaTu6bE_Cf47T9nh1NzB-6" value="GuardDuty Findings" style="whiteSpace=wrap;strokeWidth=2;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
+          <mxGeometry x="20" y="228" width="199" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="DaTu6bE_Cf47T9nh1NzB-7" value="EventBridge Triggers" style="whiteSpace=wrap;strokeWidth=2;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="288" y="228" width="206" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="DaTu6bE_Cf47T9nh1NzB-8" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="DaTu6bE_Cf47T9nh1NzB-1" target="DaTu6bE_Cf47T9nh1NzB-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DaTu6bE_Cf47T9nh1NzB-9" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="DaTu6bE_Cf47T9nh1NzB-2" target="DaTu6bE_Cf47T9nh1NzB-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DaTu6bE_Cf47T9nh1NzB-10" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="DaTu6bE_Cf47T9nh1NzB-5" target="DaTu6bE_Cf47T9nh1NzB-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DaTu6bE_Cf47T9nh1NzB-11" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" edge="1" parent="1" source="DaTu6bE_Cf47T9nh1NzB-6" target="DaTu6bE_Cf47T9nh1NzB-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

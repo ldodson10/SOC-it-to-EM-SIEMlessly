@@ -1,0 +1,109 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Page-1" id="hi56KG9lO1ZxWrqS40Lc">
+    <mxGraphModel dx="779" dy="709" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-2" value="Ground Zero AWS Account" style="whiteSpace=wrap;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="20" y="363" width="2722" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-3" value="VPC: siem-arch-ld-vpc&#xa;(10.0.0.0/16)" style="whiteSpace=wrap;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="1920" y="420" width="787" height="292" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-4" value="Private Subnets" style="whiteSpace=wrap;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="2382" y="441" width="310" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-5" value="Public Subnet: siem-public-subnet-1" style="whiteSpace=wrap;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="1983" y="429" width="264" height="196" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-6" value="SOC Analyst&#xa;(Data Quarantine Architect)" style="whiteSpace=wrap;strokeWidth=2;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="1168" y="250" width="259" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-7" value="AWS SSO / Console" style="whiteSpace=wrap;strokeWidth=2;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" parent="1" vertex="1">
+          <mxGeometry x="1624" y="262" width="194" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-8" value="EC2 Jumpbox&#xa;opensearch-jumpbox&#xa;t2.micro&#xa;i-000152da22b035036" style="whiteSpace=wrap;strokeWidth=2;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" parent="1" vertex="1">
+          <mxGeometry x="2008" y="464" width="214" height="126" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-9" value="Amazon OpenSearch Service&#xa;SIEM Dashboards / Indices" style="whiteSpace=wrap;strokeWidth=2;fillColor=#6a00ff;fontColor=#000000;strokeColor=#3700CC;" parent="1" vertex="1">
+          <mxGeometry x="2407" y="508" width="260" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-10" value="CloudTrail&#xa;API Activity Logs" style="whiteSpace=wrap;strokeWidth=2;fillColor=#d80073;fontColor=#000000;strokeColor=#A50040;" parent="1" vertex="1">
+          <mxGeometry x="54" y="398" width="178" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-11" value="VPC Flow Logs&#xa;Network Telemetry" style="whiteSpace=wrap;strokeWidth=2;fillColor=#6a00ff;fontColor=#000000;strokeColor=#3700CC;" parent="1" vertex="1">
+          <mxGeometry x="45" y="552" width="197" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-12" value="GuardDuty&#xa;Findings" style="whiteSpace=wrap;strokeWidth=2;fillColor=#e51400;fontColor=#000000;strokeColor=#B20000;" parent="1" vertex="1">
+          <mxGeometry x="75" y="680" width="136" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-13" value="S3 Central Log Bucket&#xa;siem-logs-*" style="whiteSpace=wrap;strokeWidth=2;fillColor=#60a917;fontColor=#000000;strokeColor=#2D7600;" parent="1" vertex="1">
+          <mxGeometry x="408" y="552" width="217" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-14" value="Athena&#xa;Forensic SQL Queries" style="whiteSpace=wrap;strokeWidth=2;fillColor=#6a00ff;fontColor=#000000;strokeColor=#3700CC;" parent="1" vertex="1">
+          <mxGeometry x="757" y="398" width="210" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-15" value="SSO Login" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" parent="1" source="h4d9ORAmCrLIPpLY4IFo-6" target="h4d9ORAmCrLIPpLY4IFo-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-16" value="StartSession" style="curved=1;startArrow=none;endArrow=block;exitX=0.6;exitY=1;entryX=0;entryY=0.5;rounded=0;" parent="1" source="h4d9ORAmCrLIPpLY4IFo-7" target="h4d9ORAmCrLIPpLY4IFo-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1888" y="527" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-17" value="HTTPS&#xa;Dashboards" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.24;rounded=0;" parent="1" source="h4d9ORAmCrLIPpLY4IFo-8" target="h4d9ORAmCrLIPpLY4IFo-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2382" y="527" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-18" value="Deliver Logs" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0.28;entryY=0;rounded=0;" parent="1" source="h4d9ORAmCrLIPpLY4IFo-10" target="h4d9ORAmCrLIPpLY4IFo-13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="325" y="437" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-19" value="Deliver Logs" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" parent="1" source="h4d9ORAmCrLIPpLY4IFo-11" target="h4d9ORAmCrLIPpLY4IFo-13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-20" value="Optional Export" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0.23;entryY=1;rounded=0;" parent="1" source="h4d9ORAmCrLIPpLY4IFo-12" target="h4d9ORAmCrLIPpLY4IFo-13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="325" y="719" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-21" value="Indexing / Ingestion" style="curved=1;startArrow=none;endArrow=block;exitX=0.99;exitY=1;entryX=0.18;entryY=1;rounded=0;" parent="1" source="h4d9ORAmCrLIPpLY4IFo-13" target="h4d9ORAmCrLIPpLY4IFo-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="691" y="655" />
+              <mxPoint x="2382" y="655" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-22" value="Query Logs" style="curved=1;startArrow=none;endArrow=block;exitX=0.7;exitY=0;entryX=0;entryY=0.5;rounded=0;" parent="1" source="h4d9ORAmCrLIPpLY4IFo-13" target="h4d9ORAmCrLIPpLY4IFo-14" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="691" y="437" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h4d9ORAmCrLIPpLY4IFo-23" value="Investigation Results" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0.27;entryY=1;rounded=0;" parent="1" source="h4d9ORAmCrLIPpLY4IFo-14" target="h4d9ORAmCrLIPpLY4IFo-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1067" y="437" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
